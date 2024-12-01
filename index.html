@@ -1309,8 +1309,9 @@ setInterval(showSlides, 8500);
 
     const mailTo = "hello@yanc.in";
     const subject = "Inquiry from Your Website";
-    const body = `Hello,%0A%0AI would like to learn more about your services.%0A%0ABest Regards,`;
+   const body = "Hello,\n\nI would like to learn more about your services.\n\nBest Regards,";
 
+    const encodedBody = encodeURIComponent(body).replace(/%0A/g, '\n');
     const gmailAppUrl = `googlegmail://co?to=${mailTo}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(mailTo)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
