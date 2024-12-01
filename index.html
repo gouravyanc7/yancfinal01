@@ -1301,16 +1301,45 @@ setInterval(showSlides, 8500);
     <p class="intro-text" style="color: black;">Ready to embark on your journey of growth and empowerment? Contact us today!</p>
     <button class="email-button" onclick="sendMail()">Email Us</button>
     
-    <p class="info-text">Reach out to us at <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@yanc.in">hello@yanc.in</a> for any questions or to join YANC.</p>
+   <p class="info-text">Reach out to us at <a href="mailto:hello@yanc.in" onclick="sendMail(event)">hello@yanc.in</a> for any questions or to join YANC.</p>
 
-  
-    
 <script>
-    function sendMail() {
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@yanc.in&su=Inquiry%20from%20Your%20Website&body=Hello,%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20services.%0A%0ABest%20Regards,`;
-      window.open(gmailUrl, '_blank');
+  function sendMail(event) {
+    if (event) event.preventDefault();
+
+    const mailTo = "hello@yanc.in";
+    const subject = "Inquiry from Your Website";
+    const body = `Hello,%0A%0AI would like to learn more about your services.%0A%0ABest Regards,`;
+
+    const gmailAppUrl = `googlegmail://co?to=${mailTo}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(mailTo)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      const userChoice = confirm("Would you like to open this email in the Gmail app? Click 'Cancel' to open in Chrome.");
+
+      if (userChoice) {
+        const openedGmailApp = window.open(gmailAppUrl, '_blank');
+        if (!openedGmailApp) {
+          alert("Gmail app not found, opening in Chrome.");
+          window.open(gmailWebUrl, '_blank');
+        }
+      } else {
+        const openedGmailWeb = window.open(gmailWebUrl, '_blank');
+        if (!openedGmailWeb) {
+          alert("Failed to open Gmail, please check your settings.");
+        }
+      }
+    } else {
+      const openedGmailWeb = window.open(gmailWebUrl, '_blank');
+      if (!openedGmailWeb) {
+        alert("Failed to open Gmail, please check your browser settings.");
+      }
     }
+  }
 </script>
+
     
   <style>
    
