@@ -1309,35 +1309,37 @@ setInterval(showSlides, 8500);
 
     const mailTo = "hello@yanc.in";
     const subject = "Inquiry from Your Website";
-   const body = "Hello,\n\nI would like to learn more about your services.\n\nBest Regards,";
-
+    const body = "Hello,\n\nI would like to learn more about your services.\n\nBest Regards,";
+    
     const encodedBody = encodeURIComponent(body).replace(/%0A/g, '\n');
     const gmailAppUrl = `googlegmail://co?to=${mailTo}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(mailTo)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${encodedBody}`;
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
-      const userChoice = confirm("Would you like to open this email in the Gmail app? Click 'Cancel' to open in Chrome.");
-
+      const userChoice = confirm("Would you like to open this email in your email app? Click 'Cancel' to open in Gmail web.");
+      
       if (userChoice) {
         const openedGmailApp = window.open(gmailAppUrl, '_blank');
-        if (!openedGmailApp) {
-          alert("Gmail app not found, opening in Chrome.");
-          window.open(gmailWebUrl, '_blank');
-        }
+        
+        setTimeout(() => {
+          if (!openedGmailApp || openedGmailApp.closed) {
+            alert("Failed to open Gmail app, opening in Chrome.");
+            window.open(gmailWebUrl, '_blank');
+          }
+        }, 1000);
       } else {
-        const openedGmailWeb = window.open(gmailWebUrl, '_blank');
-        if (!openedGmailWeb) {
-          alert("Failed to open Gmail, please check your settings.");
-        }
+        window.open(gmailWebUrl, '_blank');
       }
     } else {
-      const openedGmailWeb = window.open(gmailWebUrl, '_blank');
-      if (!openedGmailWeb) {
-        alert("Failed to open Gmail, please check your browser settings.");
-      }
+      window.open(gmailWebUrl, '_blank');
     }
+
+    setTimeout(() => {
+      window.location.href = "https://your-website.com";
+    }, 2000);
   }
 </script>
 
