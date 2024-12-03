@@ -1381,7 +1381,7 @@ setInterval(showSlides, 8500);
     }
   </style>
   </section>
-  <footer class="footer">
+   <footer class="footer">
     <a href="#home" class="w3-button w3-black w3-margin">
         <i class="fa fa-arrow-up w3-margin-right"></i>To the top
     </a>
@@ -1389,18 +1389,18 @@ setInterval(showSlides, 8500);
     <div class="container">
         <div class="row">
             <div class="footer-col">
-                <h4>about us</h4>
+                <h4>About Us</h4>
                 <ul>
                     <li><a href="#vision">Vision and Mission</a></li>
-                    <li><a href="#corevalues">Core values</a></li>
+                    <li><a href="#corevalues">Core Values</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Our offerings</h4>
+                <h4>Our Offerings</h4>
                 <ul>
-                    <li><a href="#valueproposition">Services</a></li>
-                    <li><a href="#Why us">Why us</a></li>
-                    <li><a href="#joinus">Who can join</a></li>
+                    <li><a href="#about">Value Propositions</a></li>
+                    <li><a href="#whyus">Why Us</a></li>
+                    <li><a href="#joinus">Who Can Join</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1411,32 +1411,36 @@ setInterval(showSlides, 8500);
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>follow us</h4>
+                <h4>Follow Us</h4>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/YANC-61565847200938" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/OneYanc" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://x.com/OneYanc" class="social-icon">
+                      <svg class="icon uniform-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
+                        <path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/>
+                      </svg>
+                    </a>
                     <a href="https://www.instagram.com/oneyanc/" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/company/oneyanc/posts/?feedView=all" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
-       <br><br><br> <h7 style="color: white; text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-            © 2024 Yanc All rights reserved.
+        <h7 style="color: white; text-align: center; font-family: 'Lucida Sans', 'Lucida Grande', sans-serif;">
+          <br><br><br><br>  © 2024 YANC All rights reserved.
         </h7>
     </div>
 
     <style>
+        /* General Footer Styling */
         .footer {
             background-color: #222;
             color: white;
             padding: 40px 0;
             text-align: center;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Unified font */
+            font-family: 'Lucida Sans', 'Lucida Grande', sans-serif;
         }
 
         .footer h4 {
             font-size: 18px;
-            font-weight: bold;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -1463,72 +1467,72 @@ setInterval(showSlides, 8500);
 
         .footer-col {
             flex: 1;
-            padding: 0 15px;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column; 
-            justify-content: space-between; 
+            padding: 10px 15px;
         }
 
-        .footer-col h4 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
+        /* Social Links Styling */
         .social-links {
             display: flex;
             justify-content: center;
+            margin-top: 10px;
         }
 
         .social-icon {
-            background-color: transparent; 
             border: 2px solid #fff;
-            border-radius: 50%; 
-            width: 50px; 
-            height: 50px; 
-            padding: 12px; 
-            margin: 0 10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-decoration: none; 
+            margin: 0 10px;
+            text-decoration: none;
             transition: all 0.3s ease-in-out;
         }
 
         .social-icon i {
             color: #fff;
-            font-size: 20px; 
+            font-size: 18px;
         }
 
         .social-icon:hover {
-            background-color: #ff7f50; 
-            border-color: #ff7f50; 
+            background-color: #ff7f50;
+            border-color: #ff7f50;
         }
 
         .footer .container {
             display: flex;
-            justify-content: space-evenly; 
             flex-wrap: wrap;
-            align-items: stretch; 
+            justify-content: space-around;
         }
 
         .footer .row {
             display: flex;
             width: 100%;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Uniform Icon Styling */
+        .uniform-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .uniform-icon path {
+            fill: white;
         }
 
         @media (max-width: 768px) {
-            .footer .container {
-                flex-direction: column;
-                align-items: center;
+            .footer-col {
+                flex: 1 0 100%;
+                text-align: center;
             }
 
-            .footer-col {
-                margin-bottom: 20px;
-                text-align: center;
+            .social-links {
+                flex-direction: row;
+                gap: 15px;
             }
         }
     </style>
