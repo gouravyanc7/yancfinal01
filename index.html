@@ -625,16 +625,17 @@ setInterval(showSlides, 8500);
       }
 
       /* Individual card styling */
-      .flash-card {
-          background: #ffffff; /* White background */
-          color: #000000; /* Black text color */
-          border-radius: 10px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          overflow: hidden;
-          position: relative;
-          animation: flash 2s infinite;
-          transition: transform 0.3s ease-in-out;
-      }
+     .flash-card {
+    background: rgb(255, 255, 255) !important; /* Ensures all cards are white */
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    animation: flash 2s infinite;
+    transition: transform 0.3s ease-in-out;
+}
+
 
       .flash-card:hover {
           transform: scale(1.05);
